@@ -13,7 +13,7 @@ class DeviceContract(ABC):
     def disconnect(self) -> None:
         ...
 
-    def send_command(self, event: EventType) -> None:
+    def send_event(self, event: EventType) -> None:
         ...
 
 
@@ -36,5 +36,5 @@ class LightBulb(DeviceContract):
         time.sleep(delay)
         print(f"Disconnected to the light bulb! {delay}s")
 
-    def send_command(self, event: EventType) -> None:
-        print(f"Received cmd {event}...")
+    def send_event(self, event: EventType) -> None:
+        print(f"Received event {event}...")
