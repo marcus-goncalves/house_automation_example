@@ -23,8 +23,8 @@ A simple example of a home automation code, using python 3.10 features and async
 - [x] Build skeleton project
 
 - **COMMAND:**
-  - [ ] Create events that will be accepted for the Controller
-  - [ ] Create default command entity
+  - [x] Create events that will be accepted for the Controller
+  - [x] Create default command entity
 - **DEVICE:**
   - [ ] Create Device Contract
     - must have a connect method
