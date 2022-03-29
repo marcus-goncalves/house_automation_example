@@ -6,6 +6,9 @@ from app.command import EventType
 
 
 class DeviceContract(ABC):
+    def __init__(self, name) -> None:
+        self.name: str = name
+
     @abstractmethod
     def connect(self) -> None:
         ...
@@ -25,16 +28,16 @@ class LightBulb(DeviceContract):
     def connect(self) -> None:
         delay = round(random.uniform(0.5, 2.5), 1)
 
-        print("Connecting to the lightbulb...")
+        print(f"Connecting to the {self.name} lightbulb...")
         time.sleep(delay)
-        print(f"Connected to the light bulb! {delay}s")
+        print(f"{self.name} Connected! {delay}s")
 
     def disconnect(self) -> None:
         delay = round(random.uniform(0.5, 2.5), 1)
 
-        print("Disconnecting to the lightbulb...")
+        print(f"Disconnecting of the {self.name} lightbulb...")
         time.sleep(delay)
-        print(f"Disconnected to the light bulb! {delay}s")
+        print(f"{self.name} Disconnected! {delay}s")
 
     def send_event(self, event: EventType) -> None:
-        print(f"Received event {event}...")
+        print(f"{self.name} Received event {event.name}...")
