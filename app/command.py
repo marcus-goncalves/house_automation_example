@@ -3,8 +3,8 @@ from enum import Enum, auto
 
 
 class EventType(Enum):
-    TURN_ON: auto()
-    TURN_OFF: auto()
+    TURN_ON = auto()
+    TURN_OFF = auto()
 
 
 @dataclass

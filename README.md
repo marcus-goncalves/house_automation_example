@@ -32,7 +32,7 @@ A simple example of a home automation code, using python 3.10 features and async
     - must have a send command method
   - [x] Implement Light bulb entity
 - **CONTROLLER:**
-  - [ ] Create Controller entity
+  - [x] Create Controller entity
     - it should generate id for the device
     - it should control active devices
     - it should call commands on defined devices
