@@ -26,11 +26,11 @@ A simple example of a home automation code, using python 3.10 features and async
   - [x] Create events that will be accepted for the Controller
   - [x] Create default command entity
 - **DEVICE:**
-  - [ ] Create Device Contract
+  - [x] Create Device Contract
     - must have a connect method
     - must have a disconnect method
     - must have a send command method
-  - [ ] Implement Light bulb entity
+  - [x] Implement Light bulb entity
 - **CONTROLLER:**
   - [ ] Create Controller entity
     - it should generate id for the device
