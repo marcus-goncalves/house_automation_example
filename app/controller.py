@@ -2,17 +2,17 @@ from uuid import uuid4
 
 from zmq import device
 from app.command import Command
-from app.device import DeviceContract
+from app.device import Device
 
 
 class HouseController:
     def __init__(self) -> None:
-        self.devices: dict[str, DeviceContract] = {}
+        self.devices: dict[str, Device] = {}
 
     def __generate_id(self) -> str:
         return uuid4()
 
-    def register_device(self, device: DeviceContract) -> str:
+    def register_device(self, device: Device) -> str:
         device_id = self.__generate_id()
         device.connect()
         self.devices[device_id] = device
@@ -26,5 +26,5 @@ class HouseController:
     def execute(self, commands: list[Command]) -> None:
         print("----- Starting Execution -----")
         for cmd in commands:
-            self.devices[cmd.device_id].send_event(cmd.event)
+            self.devices[cmd.device_id].send_event(cmd.event, cmd.data)
         print("----- End of Execution -----")

@@ -37,6 +37,6 @@ A simple example of a home automation code, using python 3.10 features and async
     - it should control active devices
     - it should call commands on defined devices
 - **NEW DEVICE - EchoDot:**
-  - [ ] Create an EchoDot device
+  - [x] Create an EchoDot device
     - it should play music
     - it should look for the weather
