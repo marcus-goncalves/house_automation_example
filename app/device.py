@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import random
 import time
+import asyncio
 
 from app.command import EventType
 from typing import Optional
@@ -26,18 +27,18 @@ class LightBulb(Device):
         Simulates a light bulb device in the house.
     """
 
-    def connect(self) -> None:
+    async def connect(self) -> None:
         delay = round(random.uniform(0.5, 2.5), 1)
 
         print(f"Connecting to the {self.name} lightbulb...")
-        time.sleep(delay)
+        await asyncio.sleep(delay)
         print(f"{self.name} Connected! {delay}s")
 
-    def disconnect(self) -> None:
+    async def disconnect(self) -> None:
         delay = round(random.uniform(0.5, 2.5), 1)
 
         print(f"Disconnecting of the {self.name} lightbulb...")
-        time.sleep(delay)
+        await asyncio.sleep(delay)
         print(f"{self.name} Disconnected! {delay}s")
 
     def send_event(self, event: EventType, data: str = "") -> None:
@@ -49,18 +50,18 @@ class EchoDot(Device):
         Simulates an EchoDot device in the house.
     """
 
-    def connect(self) -> None:
+    async def connect(self) -> None:
         delay = round(random.uniform(0.5, 2.5), 1)
 
         print(f"Connecting to the {self.name} Echo...")
-        time.sleep(delay)
+        await asyncio.sleep(delay)
         print(f"{self.name} Connected! {delay}s")
 
-    def disconnect(self) -> None:
+    async def disconnect(self) -> None:
         delay = round(random.uniform(0.5, 2.5), 1)
 
         print(f"Disconnecting of the {self.name} Echo...")
-        time.sleep(delay)
+        await asyncio.sleep(delay)
         print(f"{self.name} Disconnected! {delay}s")
 
     def send_event(self, event: EventType, data: str = "") -> None:

@@ -40,3 +40,20 @@ A simple example of a home automation code, using python 3.10 features and async
   - [x] Create an EchoDot device
     - it should play music
     - it should look for the weather
+
+### V2.0 - Adapt Controller to be Asynchronous
+
+- **CONTROLLER:**
+  - [x] Convert register method to async
+  - [x] Convert unregister method to async
+- **DEVICE:**
+  - [x] Convert connect method to async
+  - [x] convert disconnect method to async
+- **MAIN:**
+  - [x] Gather all register events to start asynchronous
+
+### Conclusion
+
+1. Register and connects each device (asynchronous)
+2. Run synchronously each command list (synchronous)
+3. Unregister each device (asynchronous)

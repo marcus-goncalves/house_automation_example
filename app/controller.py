@@ -12,15 +12,15 @@ class HouseController:
     def __generate_id(self) -> str:
         return uuid4()
 
-    def register_device(self, device: Device) -> str:
+    async def register_device(self, device: Device) -> str:
+        await device.connect()
         device_id = self.__generate_id()
-        device.connect()
         self.devices[device_id] = device
 
         return device_id
 
-    def unregister_device(self, device_id: str) -> None:
-        self.devices[device_id].disconnect()
+    async def unregister_device(self, device_id: str) -> None:
+        await self.devices[device_id].disconnect()
         del self.devices[device_id]
 
     def execute(self, commands: list[Command]) -> None:
